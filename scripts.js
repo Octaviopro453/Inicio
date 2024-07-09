@@ -16,7 +16,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
             if (user) {
                 errorMessage.textContent = ''; // Limpiar mensaje de error
-                window.location.href = 'https://octaviopro453.github.io/Apis';
+                window.location.href = '/menu.html';
             } else {
                 errorMessage.textContent = 'Usuario o contraseña incorrectos';
             }
@@ -29,25 +29,8 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
 document.getElementById('register-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevenir el envío del formulario
-
-    const newUsername = document.getElementById('new-username').value;
-    const newPassword = document.getElementById('new-password').value;
-    const registerErrorMessage = document.getElementById('register-error-message');
-
-    // Obtener los usuarios de localStorage
-    let users = JSON.parse(localStorage.getItem('users')) || [];
-    const userExists = users.some(user => user.username === newUsername);
-
-    if (userExists) {
-        registerErrorMessage.textContent = 'El usuario ya existe';
-    } else {
-        users.push({ username: newUsername, password: newPassword });
-        localStorage.setItem('users', JSON.stringify(users));
-        alert('Registro exitoso');
-        registerErrorMessage.textContent = '';
-        switchToLogin();
+    
         window.location.href = 'https://octaviopro453.github.io/Apis';
-    }
 });
 
 document.getElementById('register-link').addEventListener('click', function(event) {
