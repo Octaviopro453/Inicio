@@ -16,7 +16,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
             if (user) {
                 errorMessage.textContent = ''; // Limpiar mensaje de error
-                window.location.href = 'https://octaviopro453.github.io/Menu/';
+                window.location.href = 'https://octaviopro453.github.io/Menu';
             } else {
                 errorMessage.textContent = 'Usuario o contraseña incorrectos';
             }
