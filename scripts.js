@@ -6,13 +6,18 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const errorMessage = document.getElementById('error-message');
 
     fetch('https://edgabot.akiomae.com/AkioUsers/OctavioYT/users.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al cargar el archivo users.json');
+            }
+            return response.json();
+        })
         .then(users => {
             // Combinar los usuarios de users.json con los registrados en localStorage
             const localUsers = JSON.parse(localStorage.getItem('users')) || [];
             const allUsers = [...users, ...localUsers];
             
-            const user = allUsers.find(user => user.username === user && user.password === password);
+            const user = allUsers.find(u => u.user === username && u.password === password);
 
             if (user) {
                 errorMessage.textContent = ''; // Limpiar mensaje de error
@@ -30,7 +35,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 document.getElementById('register-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevenir el envío del formulario
     
-        window.location.href = 'https://discord.com/invite/N2RzQpNhmu';
+    window.location.href = 'https://discord.com/invite/N2RzQpNhmu';
 });
 
 document.getElementById('register-link').addEventListener('click', function(event) {
