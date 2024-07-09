@@ -5,7 +5,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const password = document.getElementById('password').value;
     const errorMessage = document.getElementById('error-message');
 
-    fetch('users.json')
+    fetch('https://edgabot.akiomae.com/AkioUsers/OctavioYT/users.json')
         .then(response => response.json())
         .then(users => {
             // Combinar los usuarios de users.json con los registrados en localStorage
