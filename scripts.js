@@ -5,7 +5,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const password = document.getElementById('password').value;
     const errorMessage = document.getElementById('error-message');
 
-    fetch('https://edgabot.akiomae.com/AkioUsers/OctavioYT/users.json')
+    fetch('users.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al cargar el archivo users.json');
@@ -17,7 +17,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
             const localUsers = JSON.parse(localStorage.getItem('users')) || [];
             const allUsers = [...users, ...localUsers];
             
-            const user = allUsers.find(u => u.user === username && u.password === password);
+            const user = allUsers.find(u => u.username === username && u.password === password);
 
             if (user) {
                 errorMessage.textContent = ''; // Limpiar mensaje de error
