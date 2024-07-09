@@ -12,7 +12,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
             const localUsers = JSON.parse(localStorage.getItem('users')) || [];
             const allUsers = [...users, ...localUsers];
             
-            const user = allUsers.find(user => user.username === username && user.password === password);
+            const user = allUsers.find(user => user.username === user && user.password === password);
 
             if (user) {
                 errorMessage.textContent = ''; // Limpiar mensaje de error
