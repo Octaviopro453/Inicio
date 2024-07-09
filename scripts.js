@@ -16,7 +16,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
             if (user) {
                 errorMessage.textContent = ''; // Limpiar mensaje de error
-                window.location.href = 'https://octaviopro453.github.io/Inicio/menu.html';
+                window.location.href = 'https://octaviopro453.github.io/Menu/';
             } else {
                 errorMessage.textContent = 'Usuario o contraseña incorrectos';
             }
@@ -30,7 +30,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 document.getElementById('register-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevenir el envío del formulario
     
-        window.location.href = 'https://octaviopro453.github.io/Apis';
+        window.location.href = 'https://discord.com/invite/N2RzQpNhmu';
 });
 
 document.getElementById('register-link').addEventListener('click', function(event) {
