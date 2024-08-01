@@ -3,52 +3,70 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
 }
 
 .login-container, .register-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
     text-align: center;
+    width: 300px;
 }
 
 h2 {
     margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 label {
     display: block;
     margin-bottom: 5px;
     text-align: left;
+    color: #ffffff;
+    font-weight: 500;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
+    padding: 12px;
+    background: #ff6b6b;
+    color: #ffffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: #ff4757;
 }
 
 #error-message, #register-error-message {
-    color: red;
+    color: #ff6b6b;
     margin-top: 10px;
 }
 
@@ -57,10 +75,12 @@ button:hover {
 }
 
 a {
-    color: #007BFF;
+    color: #ff6b6b;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
+    color: #ff4757;
     text-decoration: underline;
 }
